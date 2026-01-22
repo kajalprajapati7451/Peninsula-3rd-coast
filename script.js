@@ -20,29 +20,6 @@
         // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
         
-        // Scroll to Top Button Functionality
-        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-        const mainHeader = document.getElementById('mainHeader');
-        
-        // Show/hide scroll to top button
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollToTopBtn.style.display = 'flex';
-                mainHeader.classList.add('scrolled');
-            } else {
-                scrollToTopBtn.style.display = 'none';
-                mainHeader.classList.remove('scrolled');
-            }
-        });
-        
-        // Scroll to top when button is clicked
-        scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
         // Custom CAPTCHA Implementation
         class CaptchaSystem {
             constructor() {
@@ -85,10 +62,10 @@
                 }
                 
                 if (userInput === this.currentCaptcha) {
-                    this.showMessage('✓ CAPTCHA verified successfully!', 'success');
+                    this.showMessage('CAPTCHA verified successfully!', 'success');
                     return true;
                 } else {
-                    this.showMessage('✗ CAPTCHA code does not match. Please try again.', 'error');
+                    this.showMessage('CAPTCHA code does not match. Please try again.', 'error');
                     return false;
                 }
             }
@@ -136,7 +113,7 @@
                     }
                     
                     if (userInput === this.currentCaptcha) {
-                        this.showMessage('✓ CAPTCHA verified successfully!', 'success');
+                        this.showMessage('CAPTCHA verified successfully!', 'success');
                     }
                 });
             }
@@ -174,15 +151,8 @@
                 return;
             }
             
-            // Validate Custom CAPTCHA
+            // Validate CAPTCHA
             if (!captchaSystem.validateCaptcha()) {
-                return;
-            }
-            
-            // Validate Google reCAPTCHA
-            const recaptchaResponse = grecaptcha.getResponse();
-            if(recaptchaResponse.length === 0) {
-                alert('Please complete the "I\'m not a robot" verification.');
                 return;
             }
             
@@ -193,7 +163,6 @@
                 phone: phone,
                 interest: document.getElementById('interest').value,
                 message: message,
-                'g-recaptcha-response': recaptchaResponse,
                 timestamp: new Date().toISOString()
             };
             
@@ -219,7 +188,6 @@
                 this.reset();
                 captchaSystem.generateCaptcha();
                 captchaSystem.captchaInputElement.value = '';
-                grecaptcha.reset();
                 
                 submitBtn.innerHTML = originalText;
                 submitBtn.style.background = originalBg;
@@ -251,13 +219,13 @@
             const heroSection = document.querySelector('.hero-section');
             
             if(window.innerWidth <= 768) {
-                heroSection.style.minHeight = '550px';
-            } else if(window.innerWidth <= 576) {
                 heroSection.style.minHeight = '500px';
-            } else if(window.innerWidth <= 400) {
+            } else if(window.innerWidth <= 576) {
                 heroSection.style.minHeight = '450px';
+            } else if(window.innerWidth <= 400) {
+                heroSection.style.minHeight = '400px';
             } else {
-                heroSection.style.minHeight = '700px';
+                heroSection.style.minHeight = '600px';
             }
         }
         
@@ -266,3 +234,13 @@
         
         // Adjust on resize
         window.addEventListener('resize', adjustHeroHeight);
+        
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.main-header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });

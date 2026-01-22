@@ -6,23 +6,15 @@
     <title>Peninsula 3rd Coast Alibaug | Luxury Coastal Plots | Coming Soon</title>
     <meta name="keywords" content="Plot in Alibaug, Alibaug Properties, Peninsula 3rd Coast, Real Estate Alibaug, Coastal Properties, Luxury Plots Alibaug">
     
-    <!-- Google reCAPTCHA -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-   <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTopBtn">
-        <i class="fas fa-chevron-up"></i>
-    </button>
-    
     <!-- Header & Navigation -->
-    <header class="main-header" id="mainHeader">
+    <header class="main-header">
         <div class="page-container">
             <nav class="nav-container">
                 <a href="#home" class="site-logo">
@@ -46,9 +38,8 @@
         </div>
     </header>
 
-    <!-- Hero Section - Only Background Image -->
+    <!-- Hero Section with Background Image -->
     <section class="hero-section" id="home">
-        <div class="hero-overlay"></div>
         <div class="page-container">
             <div class="hero-content-wrapper">
                 <div class="coming-soon-label">Exclusive Launch Coming Soon</div>
@@ -77,27 +68,19 @@
                     
                     <div class="features-grid">
                         <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-umbrella-beach"></i>
-                            </div>
+                            <i class="fas fa-umbrella-beach feature-icon"></i>
                             <span>Beachfront Access</span>
                         </div>
                         <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
+                            <i class="fas fa-shield-alt feature-icon"></i>
                             <span>24/7 Security</span>
                         </div>
                         <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-leaf"></i>
-                            </div>
+                            <i class="fas fa-leaf feature-icon"></i>
                             <span>Eco-Friendly Design</span>
                         </div>
                         <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-road"></i>
-                            </div>
+                            <i class="fas fa-road feature-icon"></i>
                             <span>Easy Connectivity</span>
                         </div>
                     </div>
@@ -126,6 +109,7 @@
                     allowfullscreen=""
                     loading="lazy">
                 </iframe>
+
             </div>
         </div>
     </section>
@@ -193,8 +177,8 @@
                     <!-- Custom CAPTCHA Section -->
                     <div class="captcha-section">
                         <div class="captcha-header">
-                            <h3 class="captcha-title"><i class="fas fa-shield-alt"></i> Security Verification #1</h3>
-                            <span style="font-size: 0.9rem; color: var(--text-light);">Enter the code below</span>
+                            <h3 class="captcha-title"><i class="fas fa-shield-alt"></i> Security Verification</h3>
+                            <span style="font-size: 0.9rem; color: var(--text-light);">Please verify you're human</span>
                         </div>
                         
                         <div class="captcha-display">
@@ -222,18 +206,13 @@
     <!-- Footer -->
     <footer class="main-footer">
         <div class="page-container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <i class="fas fa-water" style="margin-right: 10px;"></i>
-                    <span>Peninsula <span style="color: var(--secondary-color);">3rd Coast</span></span>
-                </div>
-                <div class="copyright-text">
-                    <p style="margin-top: 10px;">This website is for informational purposes only. Details and specifications are subject to change without prior notice. Images are for representation purpose only.</p>
-                </div>
+            <div class="copyright-text">
+                <p>&copy; <span id="currentYear"></span> Peninsula 3rd Coast Alibaug. All Rights Reserved.</p>
+                <p style="margin-top: 10px; opacity: 0.9; font-size: 0.9rem;">A premium coastal development by Peninsula Group</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+   <script src="script.js"></script>
 </body>
 </html>
